@@ -61,7 +61,7 @@ var Pagination = function(){
                 $pagination += '<li class="'+CLASE_NEXT+'"><a href="#">' + literal.paginacion[0] + '</a></li>';
             }
             $pagination += '</ul>';
-            
+
             $paginationContent.append($pagination);
        }
 
@@ -79,6 +79,8 @@ var Pagination = function(){
 				aux.attr(ariaHid, true);
 			}
 		}
+		$("#"+ID_CONTAINER).attr("tabindex",0);
+		$("#"+ID_CONTAINER).setFocus();
 	}
 
 	function setPaginationEvents(){
