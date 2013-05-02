@@ -84,8 +84,7 @@ var Pagination = function(){
 	function setPaginationEvents(){
 		var next = $paginationContent.find("." + CLASE_NEXT),
 			prev = $paginationContent.find("." + CLASE_PREV),
-			$pags = $paginationContent.find('li:not([class])'),
-			$container = $("#"+ID_CONTAINER);
+			$pags = $paginationContent.find('li:not([class])');
 
 		$pags.on('click', 'a', function(event){
 
@@ -95,11 +94,7 @@ var Pagination = function(){
 				i = parseInt($that.html(), 10);
 			pagina = (i - 1) * NUM_ELEM_X_PAG;
 			setPagination();
-			$container.fadeOut(function(){
-				hideElements(pagina);	
-			}).fadeIn();
-			
-
+			hideElements(pagina);
 		});
 
 		next.on('click', 'a', function(event){
@@ -108,9 +103,8 @@ var Pagination = function(){
 			var numPagina = getNumPagina();
 			pagina = numPagina * NUM_ELEM_X_PAG;
 			setPagination();
-			$container.fadeOut(function(){
-				hideElements(pagina);	
-			}).fadeIn();
+			hideElements(pagina);
+
 
 		});
 
@@ -120,9 +114,7 @@ var Pagination = function(){
 			var numPagina = getNumPagina();
 			pagina = (numPagina - 2)  * NUM_ELEM_X_PAG;
 			setPagination();
-			$container.fadeOut(function(){
-				hideElements(pagina);	
-			}).fadeIn();
+			hideElements(pagina);
 		});
 
 	}
