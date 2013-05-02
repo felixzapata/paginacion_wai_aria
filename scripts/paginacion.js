@@ -79,7 +79,6 @@ var Pagination = function(){
 				aux.attr(ariaHid, true);
 			}
 		}
-		$("#"+ID_CONTAINER).attr("tabindex",0);
 		$("#"+ID_CONTAINER).setFocus();
 	}
 
@@ -121,7 +120,8 @@ var Pagination = function(){
 
 	}
 	function createContainer(){
-		elements.wrapAll('<div id="' + ID_CONTAINER + '" role="region" aria-live="polite"></div>');
+		elements.wrapAll('<div id="' + ID_CONTAINER + '" role="region" aria-live="assertive"></div>');
+		$("#"+ID_CONTAINER).attr("tabindex",0);
 	}
 	function init(elementsToPage){
 		elements = elementsToPage || $('.' + CLASE_ELEMENTO_A_PAGINAR);
