@@ -120,7 +120,11 @@ var Pagination = function(){
 
 	}
 	function createContainer(){
-		elements.wrapAll('<div id="' + ID_CONTAINER + '" role="region" aria-live="assertive"></div>');
+		if(elements.is("li")){
+			elements.parent().wrapAll('<div id="' + ID_CONTAINER + '" role="region" aria-live="assertive"></div>');
+		}else{
+			elements.wrapAll('<div id="' + ID_CONTAINER + '" role="region" aria-live="assertive"></div>');
+		}
 		$("#"+ID_CONTAINER).attr("tabindex",-1);
 	}
 	function init(elementsToPage){
